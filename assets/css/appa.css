@@ -1,0 +1,718 @@
+@import url(../css/colors.css);
+
+*{
+    margin: 0 ;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--eee);
+} 
+
+a{
+    text-decoration: none;
+}
+input{
+    padding: 0.5rem;
+}
+input:focus{
+    outline: none;
+}
+button{
+    border: none;
+    cursor: pointer;
+}
+.titre{
+    font-size: 2.7em;
+    color: var(--secondColor);
+    font-family: 'poetsen one';
+    padding: 1.3rem;
+}
+
+
+.container{
+    display: grid;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1.2rem;
+}
+
+nav form{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+nav form a{
+    color:  var(--primaryColor);
+    padding-right: 1rem;
+}
+nav form label{
+    display: flex;
+    align-items: center;
+}
+nav form label input{
+    border-radius: 5px 0 0 5px;
+    border: none;
+    width: 60%;
+    transition: 0.6s;
+}
+nav form label input:focus{
+    width: 100%;
+}
+nav form label button{
+    border-radius: 0 5px 5px 0;
+    background: var(--secondColor);
+    color: var(--primaryColor);
+    padding: 0.5rem;
+}
+
+nav .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav .logo img{
+    width: auto;
+    height: 80px;
+    border-radius: 50%;
+}
+
+nav .nav-icons{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+nav .nav-icons i{
+    padding: 0.8rem;
+    margin-right: 0.5rem;
+    font-size: 0.8em;
+    color: var(--primaryColor);
+    border-radius: 50%;
+    background: var(--secondColor);
+    box-shadow: 5px 5px 5px var(--lightgray);
+    transition: 0.5s;
+    cursor: pointer;
+}
+nav .nav-icons i:hover{
+    scale: 0.9;
+}
+.nav-wrapper{
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100lvh;
+    background: var(--lightgray);
+    padding-top: 5rem;
+    max-width: 0;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 1000;
+}
+.open{
+    max-width: 800px;
+}
+.nav-wrapper a{
+    padding: 1rem;
+    color: var(--secondColor);
+    transition: 0.5s;
+    font-size: 0.9em;
+    width: 400px;
+}
+.nav-wrapper a:hover{
+    letter-spacing: 0.1rem;
+    color: var(--gray);
+}
+#close-nav{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 2em;
+}
+
+
+/* ------------ Nouveautes  ------------*/
+.nouveautes{
+    background-position: center;
+    background-size: cover;
+    animation: bg 10s infinite;
+    transition: 0.8s;
+}
+@keyframes bg {
+    0%,100%{
+        background-image: url("../../media/burgers/b (10).jpg");
+    }
+    25%{
+        background-image: url("../../media/burgers/b (5).jpg");
+    }
+    50%{
+        background-image: url("../../media/burgers/b (9).jpg");
+    }
+    75%{
+        background-image: url("../../media/burgers/b (12).jpg");
+    }
+}
+.nouveautes .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    height: 65lvh;
+    padding: 4rem;
+    background: var(--transparent);
+}
+.nouveautes .box h1{
+    font-size: 4em;
+    color: var(--white);
+    font-family: 'poetsen one';
+}
+.nouveautes .box p{
+    text-align: center;
+    color: var(--white);
+    padding: 0 8rem;
+    line-height: 1.5rem;
+}
+.nouveautes .box a{
+    padding: 0.8rem 1.2rem;
+    border: solid 3px var(--white);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    font-size: 0.9em;
+    transition: 0.5s;
+}
+.nouveautes .box a:hover{
+    scale: 0.9;
+}
+
+/* .vogue  */
+.vogue{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 2fr;
+    height: auto;
+    padding: 2rem;
+    gap: 2em;
+}
+.vogue h1{
+    grid-column: span 2;
+}
+.vogue-box{
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    transition: 0.5s;
+    border-radius: var(--border-radius);
+    box-shadow: 5px 5px 5px var(--lightgray);
+}
+.vogue-box:nth-child(3){
+    background-image: url("../../media/burgers/b (4).jpg");
+}
+.vogue-box:nth-child(2){
+    background-image: url("../../media/burgers/b (6).jpg");
+}
+.vogue-box .icons{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 120px;
+    background: var(--secondColor);
+    border-radius: var(--border-radius);
+    transform: translateX(5rem);
+    transition: 0.5s;
+}
+.vogue-box a{
+    position: absolute;
+    bottom: 0.5rem;
+    left: 40%;
+    padding: 0.8rem 1rem;
+    font-size: 0.9em;
+    background: var(--white);
+    border-radius: var(--border-radius);
+    color: var(--secondColor);
+    transform: translateY(5rem);
+    transition: 0.5s;
+}
+.vogue-box a:hover{
+    scale: 0.9;
+}
+.vogue-box .icons i{
+    font-size: 1.1em;
+    color: var(--primaryColor);
+    padding: 0.8rem;
+}
+.vogue-box .icons button{
+    background: none;
+}
+.vogue-box:hover{
+    scale: 1.1;
+}
+.vogue-box:hover .icons{
+    transform: translateX(0);
+}
+.vogue-box:hover a{
+    transform: translateY(0);
+}
+
+
+
+/* recommandations  */
+.recommandations{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    overflow: hidden;
+    overflow-x: scroll;
+    gap: 2rem;
+}
+.recommandations::-webkit-scrollbar{
+    height: 4px;
+    background: var(--eee);
+}
+.recommandations::-webkit-scrollbar-thumb{
+    background: var(--primaryColor);
+}
+.recommandations .box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    background: var(--lightgray);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+}
+.recommandations .box img{
+    width: 40px;
+    height: 50px;
+    border-radius: var(--border-radius);
+}
+.recommandations .box button{
+    padding: 0.5rem 1rem;
+    border: solid 2px var(--primaryColor);
+    color: var(--primaryColor);
+    margin-top: 1rem;
+    border-radius: var(--border-radius);
+    background: none;
+    transition: 0.6s;
+}
+.recommandations .box button:hover{
+    scale: 0.9;
+}
+.recommandations .box p{
+    position: absolute;
+    padding: 0.5rem 1rem;
+    background: rgb(51, 255, 0);
+    color: var(--white);
+    font-size: 0.8em;
+    border-radius: 20px 0 0 20px;
+    top: 1rem;
+    right: 0;
+}
+#voirplus{
+    align-self: center;
+    color: var(--primaryColor);
+}
+
+/* panier  */
+.back-btn{
+    color: var(--gray);
+}
+#panier{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+#panier h1{
+    grid-column: span 2;
+}
+#panier form{
+    display: grid;
+    gap: 1rem;
+    height: 60lvh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#panier form::-webkit-scrollbar{
+    width: 0.2em;
+    background: var(--eee);
+}
+#panier form::-webkit-scrollbar-thumb{
+    background: var(--primaryColor);
+}
+#panier form .box{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    background: var(--lightgray);
+    text-align: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+#panier form .box img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 0.5rem;
+    border: solid 1px var(--gray);
+}
+#panier form .box p{
+    color: var(--secondColor);
+}
+#panier form .box i{
+    color: red;
+    transition: 0.5s;
+}
+#panier form .box i:hover{
+    color: rgb(255, 61, 61);
+    scale: 0.9;
+}
+#panier section h1{
+    padding: 0.2rem;
+    font-size: 1.5rem;
+    color: var(--secondColor);
+    font-weight: 100;
+}
+#panier section button{
+    padding: 0.5rem 1rem;
+    background: var(--primaryColor);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+}
+
+
+
+
+/* FOOTER */
+footer{
+    background: var(--lightgray);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 20px;
+    margin-top: 2rem;
+}
+footer label{
+    display: grid;
+    gap: 8px;
+    margin: 0 auto;
+}
+footer label h1{
+    color: var(--secondColor);
+    font-size: 1.2em;
+}
+footer label p{
+    color: var(--black);
+    font-size: 0.9em;
+}
+footer label p i{
+    margin-right: 5px;
+    color: var(--primaryColor);
+}
+footer label input,
+footer label button{
+    max-width: 200px;
+    border: none;
+    border-radius: var(--border-radius);
+}
+footer label button{
+    background: var(--primaryColor);
+    color: var(--white);
+}
+.copyright{
+    grid-column: span 3;
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--gray);
+    padding: 20px;
+}
+
+/* compte  */
+#compte{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    max-width: 1300px;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--secondColor);
+}
+#compte h1{
+    grid-column: span 3;
+    color: var(--white);
+}
+#compte section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#compte .pp{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-image: url("../../media/logo/pp.jpg");
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+}
+#compte section p{
+    color: var(--white);
+    text-align: center;
+}
+.transaction-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+.transaction-box p,
+.transaction-box i{
+    font-size: 0.8em;
+}
+.transaction-box h6{
+    color: var(--white);
+}
+.transaction-box i{
+    color: red;
+}
+.transaction-box button{
+    background: none;
+}
+#cmd{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 1rem;
+}
+#cmd::-webkit-scrollbar{
+    width: 0.2em;
+    background: var(--eee);
+}
+#cmd::-webkit-scrollbar-thumb{
+    background: var(--primaryColor);
+}
+.enregistrements{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.enregistrements img{
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+
+
+
+
+/* ADMIN  */
+menu{
+    position: relative;
+}
+.slide-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 0px;
+    height: 100lvh;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: 0.6s;
+}
+#slide-menu-btn{
+    font-size: 1.5rem;
+    color: var(--primaryColor);
+    padding: 0.4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+.slide-menu i{
+    color: var(--gray);
+}
+.open-slide{
+    max-width: 800px;
+}
+#remove-slide{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+.slide-menu a{
+    color: var(--gray);
+    padding: 2rem;
+    transition: 0.6s;
+}
+.slide-menu a:hover{
+    color: rgb(161, 161, 161);
+    letter-spacing: 0.2rem;
+}
+
+#stockage,
+#membres,
+#insertion-stockage,
+#commandes{
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin: 0 auto;
+    
+}
+#commandes a{
+    color: var(--black);
+}
+#insertion-stockage form{
+    display: grid;
+    gap: 1.2rem;
+    background: var(--white);
+    padding: 2rem;
+}
+#insertion-stockage form label{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#insertion-stockage form label input,
+#insertion-stockage form label select{
+    border: none;
+    border-bottom: solid 2px var(--black);
+    padding: 0.5rem 1rem;
+    background: var(--white);
+    color: var(--gray);
+}
+#insertion-stockage form label button{
+    padding: 0.5rem 1rem;
+    background: var(--primaryColor);
+    border-radius: var(--border-radius);
+    color: var(--white);
+}
+#insertion-stockage form label p{
+    color: var(--primaryColor);
+}
+
+#each_commande{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem;
+}
+
+#each_commande h2{
+    grid-column: span 2;
+}
+
+#stockage .liste,
+#membres .liste,
+#commandes .liste{
+    display: grid;
+    gap: 2rem;
+}
+#each_commande .liste{
+    display: grid;
+    gap: 2rem;
+    max-height: 60lvh;
+    overflow: hidden;
+    overflow-y: scroll;
+    gap: 2rem;
+}
+#each_commande .liste::-webkit-scrollbar{
+    height: 0.2em;
+    background: var(--eee);
+}
+#each_commande .liste::-webkit-scrollbar-thumb{
+    background: var(--primaryColor);
+}
+#each_commande .total h1{
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+#each_commande .total label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 200px;
+    padding: 0.2rem;
+}
+#each_commande .total label button{
+    padding: 0.5rem 1rem;
+    border: none;
+    background: var(--primaryColor);
+    color: var(--white);
+    border-radius: var(--border-radius);
+}
+#stockage .liste .box,
+#membres .liste .box,
+#commandes .liste .box,
+#each_commande .liste .box{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 1rem;
+    background: rgb(192, 192, 192);
+    border-radius: var(--border-radius);
+}
+#stockage .liste .box img, 
+#membres .liste .box img,
+#commandes .liste .box img,
+#each_commande .liste .box img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    padding: 0.5rem;
+    border: solid 1px var(--gray);
+    margin: 0 auto;
+}
+#stockage .liste .box .info,
+#membres .liste .box .info,
+#commandes .liste .box .info,
+#each_commande .liste .box .info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* text-align: start; */
+    
+}
+#stockage .liste .box h2{
+    align-self: center;
+    font-size: 1em;
+    color: var(--black);
+    text-align: center;
+}
+#membres .liste .box button,
+#commandes .liste .box button,
+#each_commande .liste .box button{
+    padding: 0.5rem 1rem;
+    background: var(--primaryColor);
+    border-radius: var(--border-radius);
+    color: var(--white);
+    align-self: center;
+    margin: 0 auto;
+    max-width: 150px;
+}

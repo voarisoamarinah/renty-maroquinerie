@@ -1,0 +1,14 @@
+:root{
+    --black: #1C1F20;
+    --primaryColor: #DD8B28;
+    --thirdColor: #651410;
+    --fourthColor: #B29D8D;
+    --white: #f1f1f1;
+    --blue: #00e5ff;
+    --gray: rgb(148, 148, 148);
+    --lightgray: rgb(220, 220, 220);
+    --darkgray: rgb(100, 100, 100);
+    --bg: #D5DDE2;
+    --transparent: #000000ad;
+    --border-radius: 8px;
+}
